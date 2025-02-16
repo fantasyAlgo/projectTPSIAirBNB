@@ -1,0 +1,81 @@
+
+/* General page styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #9b4f46;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Payment container */
+.payment-container {
+    background-color: #231815;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Price Box */
+.price-box {
+    background-color: #7a3b32;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Form Inputs */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-form label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.payment-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 95%;
+    outline: none;
+}
+
+/* Expiry & CVV */
+.card-details {
+    display: flex;
+    gap: 10px;
+}
+
+.card-details div {
+    flex: 1;
+}
+
+/* Pay Button */
+.pay-button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.pay-button:hover {
+    background-color: #388e3c;
+}
