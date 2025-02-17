@@ -58,7 +58,7 @@ body {
 }
 
 .available {
-    background-color: #4caf50;
+    background-color: #4302222;
 }
 
 .unavailable {
@@ -69,6 +69,7 @@ body {
     transform: scale(1.05);
     opacity: 0.8;
 }
+
 .box img {
     width: 100%;  /* Makes the image take the full width of the container */
     height: auto; /* Keeps aspect ratio */
@@ -77,5 +78,22 @@ body {
     display: block; /* Removes inline spacing issues */
     margin: 0 auto 10px; /* Centers the image and adds spacing */
     border-radius: 10px; /* Optional: Rounds the image corners */
+}
+
+
+.login-button {
+    background-color: #FF5A5F; /* Airbnb-style red */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background-color: #D93B42;
+    transform: scale(1.05);
 }
 

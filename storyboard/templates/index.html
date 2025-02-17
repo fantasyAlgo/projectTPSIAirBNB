@@ -12,18 +12,17 @@
     <div class="search-container">
         <img src="{{ url_for('static', filename='airbnbIcon.webp') }}" alt="" width="40px" height="40px">
         <input type="text" class="search-bar" placeholder="Search..." onclick="handleSearchClick()">
+        {% if not isLogged %}
+          <a href="/login" class="login-button">Login</a>
+        {% else %}
+          <a href="/logout" class="login-button">Logout</a>
+        {% endif %}
     </div>
 
     <div class="grid">
-        <a href="page1.html" class="box available"><img src="{{ url_for('static', filename='villa.jpg') }}" alt="">Disponible</a>
-        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
-        <a href="page1.html" class="box available"><img src="{{ url_for('static', filename='villa.jpg') }}" alt="">Disponible</a>
-        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
-        <a href="page1.html" class="box available"><img src="{{ url_for('static', filename='villa.jpg') }}" alt="">Disponible</a>
-        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
-        <a href="page1.html" class="box available"><img src="{{ url_for('static', filename='villa.jpg') }}" alt="">Disponible</a>
-        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
-        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
+      {% for i in range(content|length) %}
+      <a href="{{ url_for('page', id=content[i][0])}}" class="box available"><img src="{{ content[i][3]}}" alt="">{{content[i][1]}}</a>
+      {% endfor %}
     </div>
 
     <script src="script.js"></script>

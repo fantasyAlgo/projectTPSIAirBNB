@@ -1,7 +1,19 @@
-CREATE TABLE Appartment (
+
+/*
+CREATE TABLE IF NOT EXISTS Appartments (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    daily_cost INTEGER,
-    position TEXT,
-    isAvailable BOOLEAN
+    title TEXT NOT NULL,
+    price TEXT,
+    link_img TEXT,
+    description TEXT
+)
+*/
+
+
+CREATE TABLE IF NOT EXISTS Users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username VARCHAR(255),
+    email VARCHAR(255),
+    password VARCHAR(255)
 );
+

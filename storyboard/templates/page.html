@@ -1,35 +1,37 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Details</title>
-    <link rel="stylesheet" href="page1.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='page1.css') }}">
 </head>
 <body>
 
     <!-- Back Button -->
     <div class="header">
-        <a href="index.html" class="back-button">⬅</a>
+      <a href="{{url_for('home')}}" class="back-button">⬅</a>
     </div>
 
     <!-- Main Content -->
     <div class="container">
         <div class="image-container">
-            <img src="villa.jpg" alt="Villa Image">
+        <img src="{{ item[3] }}" alt="Villa Image">
         </div>
         
         <div class="info-container">
-            <h1>Villa Santa di Maria Croce</h1>
+            <h1>{{item[1]}}</h1>
+            <p>{{item[4]}}</p>
             <p>4 guests • 1 bedroom • 2 beds • 1 bath</p>
         </div>
 
         <div class="booking-container">
             <div class="price-box">
-                <p><strong>7.4$</strong> a Notte</p>
+              <p><strong>{{item[2][:5]}}€</strong> a Notte</p>
             </div>
+              
             <div class="date-box">
+              <form action="/payment", method="GET">
                 <label for="checkin">Check-in:</label>
                 <input type="date" id="checkin" name="checkin">
                 <br>
@@ -40,8 +42,11 @@
 
                 <label for="people">N. People:</label>
                 <input type="number" id="people" name="people" min="1" value="2">
+                <br>
+                <br>
+                <button class="book-button">Prenota</button>
+              </form>
             </div>
-            <a href="payment.html"><button class="book-button">Prenota</button></a>
         </div>
     </div>
 
