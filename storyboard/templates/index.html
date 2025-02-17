@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Availability Grid</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="search-container">
+        <img src="{{ url_for('static', filename='airbnbIcon.webp') }}" alt="" width="40px" height="40px">
+        <input type="text" class="search-bar" placeholder="Search..." onclick="handleSearchClick()">
+    </div>
+
+    <div class="grid">
+        <a href="page1.html" class="box available"><img src="{{ url_for('static', filename='villa.jpg') }}" alt="">Disponible</a>
+        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
+        <a href="page1.html" class="box available"><img src="{{ url_for('static', filename='villa.jpg') }}" alt="">Disponible</a>
+        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
+        <a href="page1.html" class="box available"><img src="{{ url_for('static', filename='villa.jpg') }}" alt="">Disponible</a>
+        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
+        <a href="page1.html" class="box available"><img src="{{ url_for('static', filename='villa.jpg') }}" alt="">Disponible</a>
+        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
+        <a href="page1.html" class="box unavailable"><img src="{{ url_for('static', filename='house2.jpg') }}" alt="">Non Disponible</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
