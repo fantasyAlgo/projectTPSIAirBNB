@@ -54,14 +54,29 @@ def logout():
     session.pop("username", None)
     return redirect(url_for("home"))
 
-@app.route("/payment")
+@app.route("/payment", methods=["GET", "POST"])
 def payment():
     if request.method == "GET":
+        item_id = request.args.get('id')
+        item = list(cursor.execute(f"SELECT * FROM Appartments WHERE id = {item_id}"))[0]
         date_format = '%Y-%m-%d'
         checkin = datetime.strptime(request.args.get('checkin'), date_format)
         checkout = datetime.strptime(request.args.get('checkout'), date_format)
-        print(checkin, checkout, checkout-checkin)
-        return render_template("payment.html")
+        nPeople = request.args.get("people")
+        days = (checkout-checkin).days
+        return render_template("payment.html", passed_data = [checkin, checkout, nPeople, item], money =  round(days*float(item[2]), 3))
+    ### In case of a POST request
+    if not "username" in session:
+        return redirect(url_for("login"))
+    item_id = request.args.get('id')
+    date_format = '%Y-%m-%d'
+    checkin = datetime.strptime(request.form.get('checkin').split(" ")[0], date_format)
+    checkout = datetime.strptime(request.form.get('checkout').split(" ")[0], date_format)
+    nPeople = request.form.get("people")
+    user_id = list(cursor.execute(f"SELECT * FROM Users WHERE username = 'sk' "))[0]
+    result = cursor.execute(f"INSERT INTO Renting (user_id, appartment_id, checkin, checkout, NPeople) VALUES (?, ?, ?, ?, ?)", (user_id, item_id, checkin, checkout, nPeople))
+    conn.commit()
+    return redirect(url_for("home"))
 
 
 if __name__ == '__main__':
