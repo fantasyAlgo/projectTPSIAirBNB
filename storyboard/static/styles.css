@@ -97,3 +97,44 @@ body {
     transform: scale(1.05);
 }
 
+
+
+.footer {
+    background-color: #f8f8f8;
+    padding: 20px;
+    padding-left: 100%;
+    padding-right: 100%;
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.footer p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-weight: 100;
+}
+
+.footer-links li {
+    display: inline;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #0073e6;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

@@ -16,6 +16,7 @@
           <a href="/login" class="login-button">Login</a>
         {% else %}
           <a href="/logout" class="login-button">Logout</a>
+          <a href="/bookings" class="login-button">Bookings</a>
         {% endif %}
     </div>
 
@@ -24,6 +25,15 @@
       <a href="{{ url_for('page', id=content[i][0])}}" class="box available"><img src="{{ content[i][3]}}" alt="">{{content[i][1]}}</a>
       {% endfor %}
     </div>
+
+    <footer class="footer">
+      <p>&copy; 2025 Fake airbnb. All rights reserved.</p>
+      <ul class="footer-links">
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+      </ul>
+    </footer>
 
     <script src="script.js"></script>
 </body>
